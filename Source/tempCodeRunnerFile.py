@@ -1,0 +1,1 @@
+new = sorted(list(set(new)), key=lambda sub:sub[-1])
