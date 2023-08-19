@@ -155,10 +155,19 @@ def outPut(link,new, result):
             wf.write('\n')
     wf.write(str(result))
 
+def interact():
+    inp = input("Enter your file name: (example: path/input1.txt) ")
+    out = input("Enter your file name: (example: path/output1.txt) ")
+    # inp = './Input/' + inp
+    # out = './Output/' + out
+    # print(inp, out) 
+    return inp, out
+
 if __name__ == '__main__':
-    m,n,query,kb = inputFile('./Input/input6.txt')
+    inp, out = interact()
+    m,n,query,kb = inputFile(inp)
     result, new = PLResolution(kb,query)
-    outPut('./Output/output6.txt',new, result)
+    outPut(out,new, result)
     print(result,new)
     # clause2 = [['C'],['A','-B'],['-C','A']]
     # print(returnOppositeQuery(clause2))
